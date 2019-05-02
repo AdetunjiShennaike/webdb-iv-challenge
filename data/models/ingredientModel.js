@@ -1,30 +1,49 @@
-//set up th eexports
+//import knex from config file 
+const db = require('../dbConfig');
+
+//set up th exports
 module.exports = {
   get,
   getById,
-  inert,
+  insert,
   update,
   remove,
   
 }
 
 //setup SQL Functions
-get() {
-
+function get() {
+  return db('ingredients');
 }
 
-getById(id) {
-
+function getById(id) {
+ return db('ingredients')
+ .where('id', id)
+ .first()
 }
 
-insert(recipe) {
-
+function insert(dish) {
+  return db('ingredients')
+  .insert( dish )
+  .then( ids => {
+    return getById(ids[0]);//returns the whole object
+  })
 }
 
-update(id, change) {
-
+function update(id, change) {
+  return db('ingredients')
+  .where({ id })
+  .update( change )
+  .then( ids => {
+    return getById(ids[0]);//returns the whole object
+  })
 }
 
-remove(id) {
-
+function remove(id) {
+  return db('ingredients')
+  .where('id', id)
+  .del()
+  .then( ids => {
+    return getById(ids[0]);//returns the whole object
+  })
 }

@@ -3,7 +3,7 @@ const express = require('express');
 const route = express.Router();
 
 //import db
-
+const dishes = require('../data/models/dishModel');
 
 //set error msgs
 const sendError = (msg, res) => {

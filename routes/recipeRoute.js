@@ -3,7 +3,7 @@ const express = require('express');
 const route = express.Router();
 
 //import db
-
+const recipes = require('../data/models/recipeModel');
 
 //set error msgs
 const sendError = (msg, res) => {
