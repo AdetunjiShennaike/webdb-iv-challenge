@@ -28,6 +28,12 @@ exports.up = function(knex, Promise) {
     tbl
     .float('amount')
     .notNullable()
+
+    //measurement type
+    tbl
+    .string('measurement', '128')
+    .notNullable()
+
   })
   
 };
