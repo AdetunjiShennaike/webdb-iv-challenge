@@ -1,0 +1,26 @@
+{
+  "name": "webdb-iv-challenge",
+  "version": "1.0.0",
+  "description": "challenge for developing better skills",
+  "main": "index.js",
+  "repository": "https://github.com/AdetunjiShennaike/webdb-iv-challenge.git",
+  "scripts": {
+    "start": "node index.js",
+    "server": "nodemon index.js"
+  },
+  "author": "Adetunji <ashennaike@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^7.0.0",
+    "express": "^4.16.4",
+    "helmet": "^3.16.0",
+    "knex": "^0.16.5",
+    "morgan": "^1.9.1",
+    "sqlite3": "^4.0.6"
+  },
+  "devDependencies": {
+    "knex-cleaner": "^1.1.4",
+    "nodemon": "^1.19.0"
+  }
+}
