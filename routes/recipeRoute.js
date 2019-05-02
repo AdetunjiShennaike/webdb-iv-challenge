@@ -1,6 +1,6 @@
 //import express and set route
 const express = require('express');
-const route = express.Router();
+const router = express.Router();
 
 //import db
 const recipes = require('../data/models/recipeModel');
@@ -21,6 +21,8 @@ const newError = (sts, msg, res) => {
 //set middleware
 
 //CRUD requests
+//get actions
+router
 
 //export
-module.exports = route;
+module.exports = router;

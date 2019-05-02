@@ -48,7 +48,7 @@ function remove(id) {
   })
 }
 
-function getRecipies(id) {
+function getIngredients(id) {
   return db('recipes')
   .where('recipe_id', id)
   .then( ingredients => ingredients.map(ingredient => { return {...ingredient}}))

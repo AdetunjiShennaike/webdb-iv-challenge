@@ -4,7 +4,7 @@ const knexConfig = require('../knexfile');
 require('dotenv').config();
 
 //define the export
-const db = knex(knexConfig[process.env.DB_STAGE])
+const db = knex(knexConfig.development)
 
 //export to be used in multiple files instead of having to call repeatedly
 module.exports = db;
