@@ -11,7 +11,11 @@ exports.up = function(knex, Promise) {
     .notNullable()
     .unique()
 
-    
+    //measurement type
+    tbl
+    .string('measurement', '128')
+    .notNullable()
+  
   })
   
 };
