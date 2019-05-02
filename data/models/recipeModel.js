@@ -8,7 +8,8 @@ module.exports = {
   insert,
   update,
   remove,
-  getIngredients
+  getIngredients,
+  getRecipe
 }
 
 //setup SQL Functions
@@ -49,7 +50,15 @@ function remove(id) {
 }
 
 function getIngredients(id) {
-  return db('recipes')
+  return db('recIng')
   .where('recipe_id', id)
   .then( ingredients => ingredients.map(ingredient => { return {...ingredient}}))
+}
+
+function getRecipe(id) {
+  return db('recipes')
+  .where('id', id)
+  .then( ids => {
+    return  getById(ids[0]) && getIngredients(ids[0])
+  })
 }
